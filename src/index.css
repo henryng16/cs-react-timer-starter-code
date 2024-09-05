@@ -77,6 +77,9 @@ p {
   font-family: "New Amsterdam", sans-serif;
   text-shadow: 1px 1px 2px #6b8a7a;
   font-size: clamp(2.5rem, 3.5rem, 5rem);
+}
+
+.show {
   color: var(--text-shadow-color);
 }
 
@@ -121,7 +124,7 @@ p {
   transition: ease-in-out 0.5s;
   transform: scale(1.2);
   font-size: 5rem;
-  color: #049757;
+  color: rgb(154, 227, 180);
 }
 
 .splits {

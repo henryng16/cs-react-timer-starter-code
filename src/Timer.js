@@ -16,7 +16,9 @@ function Timer({
       <h1>Coder Timer</h1>
       <div className="timer__wrapper">
         <div className="timer__display">
-          <p className={isTicking ? "ticking" : ""}>{formatTime(time)}</p>
+          <p className={isTicking ? " show ticking" : "show"}>
+            {formatTime(time)}
+          </p>
         </div>
         <div className="button__wrapper">
           <button className="button" onClick={stopTimer}>

@@ -1,6 +1,6 @@
 import useTimer from "./useTimer";
 import { formatTime } from "./formatTime";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Timer from "./Timer";
 
 function App() {
@@ -14,19 +14,18 @@ function App() {
     active,
   } = useTimer(0);
   const [isTicking, setIsTicking] = useState(false);
-  const [isFirstRender, setIsFirstRender] = useState(true);
-
+  const isFirstRender = useRef(true);
   useEffect(() => {
-    if (!isFirstRender) {
+    if (!isFirstRender.current) {
       setIsTicking(true);
     }
-    setIsFirstRender(false);
+    isFirstRender.current = false;
   }, [time]);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setIsTicking(false);
-    }, 200);
+    }, 250);
 
     return () => {
       clearTimeout(timeOut);
